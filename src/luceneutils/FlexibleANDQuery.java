@@ -32,15 +32,13 @@ public class FlexibleANDQuery extends Query {
 	public FlexibleANDQuery(String _query, Analyzer _analyzer, String main_field, Comparator<String> term_comparator) throws IOException {
 		this.main_field = main_field;
 		analyzer = _analyzer;
-		splitted_query = new LinkedList<String>();
 		deleted_terms = new LinkedList<String>(); 
-		for (String term : parseKeywords(analyzer, _query)) 
-			splitted_query.add(term);
+		splitted_query = parseKeywords(analyzer, _query);
 		Collections.sort(splitted_query, term_comparator);
 	}
 	
-	public static List<String> parseKeywords(Analyzer analyzer, String keywords) {
-        List<String> result = new ArrayList<String>();
+	public static LinkedList<String> parseKeywords(Analyzer analyzer, String keywords) {
+        LinkedList<String> result = new LinkedList<String>();
         TokenStream stream  = analyzer.tokenStream("", new StringReader(keywords));
         try {
         	char[] x;
