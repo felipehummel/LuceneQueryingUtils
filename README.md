@@ -1,10 +1,3 @@
-Simple set of Lucene utility classes
----------
-
-CountingCollector
------
-A simple counting collector. It does not generate any kind of document ranking.
-
 FlexibleANDQuery
 --------
 
@@ -28,3 +21,8 @@ Typical usage:
     } 
     // ...
     // use top_docs
+    
+    
+CountingCollector
+-----
+A simple counting collector. It does not generate any kind of document ranking.
