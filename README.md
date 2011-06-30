@@ -1,11 +1,11 @@
 Simple set of Lucene utility classes
 ---------
 
-`CountingCollector`
+CountingCollector
 -----
 A simple counting collector. It does not generate any kind of document ranking.
 
-`FlexibleANDQuery`
+FlexibleANDQuery
 --------
 
 A Lucene `Query` implementation that behaves like a typical AND query. But you may choose to re-run it if there wasn't enough results.
